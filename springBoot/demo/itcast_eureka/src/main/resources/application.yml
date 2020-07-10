@@ -1,0 +1,19 @@
+server:
+  port: 10086
+spring:
+  application:
+    name: itcast-eureka #将来会作为服务id或者服务名注册到eureka注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 5  #心跳间隔时间
+    lease-expiration-duration-in-seconds: 15 #过期时间
+  server:
+    eviction-interval-timer-in-ms: 10000  #剔除所有失效的服务
+    enable-self-preservation: false #关闭自我保护机制
+
+ribbon:
+  eureka:
+    enabled: true

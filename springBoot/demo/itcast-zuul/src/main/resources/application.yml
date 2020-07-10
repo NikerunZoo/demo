@@ -1,0 +1,18 @@
+server:
+  port: 10010
+spring:
+  application:
+    name: itcast-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+zuul:
+  routes:
+    service-provider: /provider/** #指定路由到的服务名
+  prefix: /api #配网关前缀
+    #  path: /service-provider/**  #如果请求路径是以service-provider开头的则会跳转到http://loacalhost:8081路径下
+     # serviceId: service-provider
+      #url: http://localhost:8081
+
+
